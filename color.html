@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link rel="stylesheet" href="styles.css">
+   <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+ 
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+   width: 300px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+ text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    font-style: bold;
+    font-weight: 600;
+
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+.nav-link:active {
+    color: #2980b9;
+}
+
+
+</style>
+
+
+
+
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <img src="assets/PH-Logo-Dark-BdyTP5j6.png" class="logo">
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">হোম</a></li>
+                    <li class="nav-item"><a href="class.html" class="nav-link">বুটক্যাম্প ক্লাস</a></li>
+                    <li class="nav-item"><a href="course.html" class="nav-link">মেইন কোর্স</a></li>
+                    <li class="nav-item"><a href="blog-ph.html" class="nav-link">ব্লগ</a></li>
+                    <li class="nav-item"><a href="ph-book.html" class="nav-link">Ph Books</a></li>
+                </ul>
+              
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main-content" style="background: #f4f6fa; min-height: 100vh; transition: background 0.3s;">
+        <section style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <h1 id="gallery-title" style="font-size: 2.5rem; font-weight: 800; color: #222; letter-spacing: -1px;">Gradient Gallery</h1>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <input id="searchInput" type="text" placeholder="Search gradients..." style="padding: 0.5rem 1rem; border-radius: 999px; border: 1px solid #ccc; font-size: 1rem; outline: none; transition: border 0.2s;">
+                    <button id="toggleMode" aria-label="Toggle dark mode" style="background: #222; color: #fff; border: none; border-radius: 999px; padding: 0.5rem 1rem; font-size: 1.1rem; cursor: pointer; transition: background 0.2s;">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="gradientGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <!-- Gradient cards will be injected here -->
+            </div>
+        </section>
+        <section style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Button Styles</h2>
+            <div id="buttonGrid" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <!-- Buttons will be injected here -->
+            </div>
+        </section>
+    </main>
+    <script>
+    // --- Add 200+ more gradients ---
+    // Gradients and buttons are added below
+
+    // Add gradients from extraGradients to main gradients array
+    gradients.push(...extraGradients);
+
+    // --- Button Styles (50 buttons) ---
+    const buttonStyles = [
+        { name: "Primary", style: "background: #3498db; color: #fff;" },
+        { name: "Success", style: "background: #2ecc71; color: #fff;" },
+        { name: "Danger", style: "background: #e74c3c; color: #fff;" },
+        { name: "Warning", style: "background: #f1c40f; color: #222;" },
+        { name: "Info", style: "background: #1abc9c; color: #fff;" },
+        { name: "Dark", style: "background: #222; color: #fff;" },
+        { name: "Light", style: "background: #f4f6fa; color: #222; border: 1px solid #ccc;" },
+        { name: "Purple", style: "background: #8e44ad; color: #fff;" },
+        { name: "Pink", style: "background: #fd79a8; color: #fff;" },
+        { name: "Indigo", style: "background: #3f51b5; color: #fff;" },
+        { name: "Teal", style: "background: #009688; color: #fff;" },
+        { name: "Amber", style: "background: #ffc107; color: #222;" },
+        { name: "Blue Gray", style: "background: #607d8b; color: #fff;" },
+        { name: "Cyan", style: "background: #00bcd4; color: #fff;" },
+        { name: "Lime", style: "background: #cddc39; color: #222;" },
+        { name: "Deep Orange", style: "background: #ff5722; color: #fff;" },
+        { name: "Brown", style: "background: #795548; color: #fff;" },
+        { name: "Gradient 1", style: "background: linear-gradient(90deg, #ff9966, #ff5e62); color: #fff;" },
+        { name: "Gradient 2", style: "background: linear-gradient(90deg, #43cea2, #185a9d); color: #fff;" },
+        { name: "Gradient 3", style: "background: linear-gradient(90deg, #f7971e, #ffd200); color: #222;" },
+        { name: "Gradient 4", style: "background: linear-gradient(90deg, #00c6fb, #005bea); color: #fff;" },
+        { name: "Gradient 5", style: "background: linear-gradient(90deg, #eecda3, #ef629f); color: #fff;" },
+        { name: "Outline Primary", style: "background: transparent; color: #3498db; border: 2px solid #3498db;" },
+        { name: "Outline Success", style: "background: transparent; color: #2ecc71; border: 2px solid #2ecc71;" },
+        { name: "Outline Danger", style: "background: transparent; color: #e74c3c; border: 2px solid #e74c3c;" },
+        { name: "Outline Warning", style: "background: transparent; color: #f1c40f; border: 2px solid #f1c40f;" },
+        { name: "Outline Info", style: "background: transparent; color: #1abc9c; border: 2px solid #1abc9c;" },
+        { name: "Outline Dark", style: "background: transparent; color: #222; border: 2px solid #222;" },
+        { name: "Outline Purple", style: "background: transparent; color: #8e44ad; border: 2px solid #8e44ad;" },
+        { name: "Outline Pink", style: "background: transparent; color: #fd79a8; border: 2px solid #fd79a8;" },
+        { name: "Outline Indigo", style: "background: transparent; color: #3f51b5; border: 2px solid #3f51b5;" },
+        { name: "Outline Teal", style: "background: transparent; color: #009688; border: 2px solid #009688;" },
+        { name: "Outline Amber", style: "background: transparent; color: #ffc107; border: 2px solid #ffc107;" },
+        { name: "Outline Blue Gray", style: "background: transparent; color: #607d8b; border: 2px solid #607d8b;" },
+        { name: "Outline Cyan", style: "background: transparent; color: #00bcd4; border: 2px solid #00bcd4;" },
+        { name: "Outline Lime", style: "background: transparent; color: #cddc39; border: 2px solid #cddc39;" },
+        { name: "Outline Deep Orange", style: "background: transparent; color: #ff5722; border: 2px solid #ff5722;" },
+        { name: "Outline Brown", style: "background: transparent; color: #795548; border: 2px solid #795548;" },
+        { name: "Glass", style: "background: rgba(255,255,255,0.2); color: #222; border: 1px solid #ccc; backdrop-filter: blur(4px);" },
+        { name: "Shadow", style: "background: #fff; color: #222; box-shadow: 0 4px 16px rgba(0,0,0,0.12);" },
+        { name: "Neon", style: "background: #0ff; color: #222; box-shadow: 0 0 8px #0ff, 0 0 16px #0ff;" },
+        { name: "Ghost", style: "background: transparent; color: #222; border: none;" },
+        { name: "Rounded", style: "background: #222; color: #fff; border-radius: 999px;" },
+        { name: "Square", style: "background: #222; color: #fff; border-radius: 0;" },
+        { name: "Pill", style: "background: #3498db; color: #fff; border-radius: 50px;" },
+        { name: "Block", style: "background: #2ecc71; color: #fff; width: 100%;" },
+        { name: "Dashed", style: "background: #fff; color: #222; border: 2px dashed #222;" },
+        { name: "Dotted", style: "background: #fff; color: #222; border: 2px dotted #222;" },
+        { name: "Link", style: "background: none; color: #3498db; border: none; text-decoration: underline;" }
+    ];
+    // Add more button styles to reach 50
+    for (let i = buttonStyles.length + 1; i <= 50; i++) {
+        buttonStyles.push({
+            name: `Button ${i}`,
+            style: `background: linear-gradient(90deg, hsl(${i*7}, 80%, 60%), hsl(${(i*7+60)%360}, 80%, 70%)); color: #fff;`
+        });
+    }
+
+    // Render Buttons
+    const buttonGrid = document.getElementById('buttonGrid');
+    buttonStyles.forEach(btn => {
+        const button = document.createElement('button');
+        button.textContent = btn.name;
+        button.setAttribute('style', `
+            ${btn.style}
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+            margin-bottom: 0.5rem;
+        `);
+        button.onmouseover = () => {
+            button.style.boxShadow = "0 4px 16px rgba(0,0,0,0.12)";
+        };
+        button.onmouseout = () => {
+            button.style.boxShadow = "";
+        };
+        buttonGrid.appendChild(button);
+    });
+    const extraGradients = [
+        // Example extra gradients (add more as needed)
+        { name: "Candy", css: "linear-gradient(135deg, #ffb347, #ffcc33)", colors: ["#ffb347", "#ffcc33"] },
+        { name: "Skyline", css: "linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff)", colors: ["#2980b9", "#6dd5fa", "#ffffff"] },
+        { name: "Rose Water", css: "linear-gradient(135deg, #f85032, #e73827)", colors: ["#f85032", "#e73827"] },
+        { name: "Mint Leaf", css: "linear-gradient(135deg, #00b09b, #96c93d)", colors: ["#00b09b", "#96c93d"] },
+        { name: "Lavender", css: "linear-gradient(135deg, #eecda3, #ef629f)", colors: ["#eecda3", "#ef629f"] },
+        { name: "Steel Gray", css: "linear-gradient(135deg, #485563, #29323c)", colors: ["#485563", "#29323c"] },
+        { name: "Orange Coral", css: "linear-gradient(135deg, #ff9966, #ff5e62)", colors: ["#ff9966", "#ff5e62"] },
+        { name: "Blue Raspberry", css: "linear-gradient(135deg, #00c6fb, #005bea)", colors: ["#00c6fb", "#005bea"] },
+        { name: "Plum", css: "linear-gradient(135deg, #667eea, #764ba2)", colors: ["#667eea", "#764ba2"] },
+        { name: "Pink Lemonade", css: "linear-gradient(135deg, #f7971e, #ffd200, #f7971e)", colors: ["#f7971e", "#ffd200", "#f7971e"] },
+        { name: "Deep Sea", css: "linear-gradient(135deg, #2c3e50, #4ca1af)", colors: ["#2c3e50", "#4ca1af"] },
+        { name: "Sunflower", css: "linear-gradient(135deg, #ffe259, #ffa751)", colors: ["#ffe259", "#ffa751"] },
+        { name: "Berry", css: "linear-gradient(135deg, #8e2de2, #4a00e0)", colors: ["#8e2de2", "#4a00e0"] },
+        { name: "Citrus", css: "linear-gradient(135deg, #fdc830, #f37335)", colors: ["#fdc830", "#f37335"] },
+        { name: "Aqua", css: "linear-gradient(135deg, #13547a, #80d0c7)", colors: ["#13547a", "#80d0c7"] },
+        { name: "Peachy", css: "linear-gradient(135deg, #ffecd2, #fcb69f)", colors: ["#ffecd2", "#fcb69f"] },
+        { name: "Forest", css: "linear-gradient(135deg, #5a3f37, #2c7744)", colors: ["#5a3f37", "#2c7744"] },
+        { name: "Bubblegum", css: "linear-gradient(135deg, #ff6a00, #ee0979)", colors: ["#ff6a00", "#ee0979"] },
+        { name: "Ice", css: "linear-gradient(135deg, #83a4d4, #b6fbff)", colors: ["#83a4d4", "#b6fbff"] },
+        { name: "Lime", css: "linear-gradient(135deg, #a8ff78, #78ffd6)", colors: ["#a8ff78", "#78ffd6"] },
+        // ... Add 180+ more gradients for a total of 200+ ...
+    ];
+    // Generate more gradients programmatically for demo
+    for (let i = 1; i <= 180; i++) {
+        extraGradients.push({
+            name: `Custom ${i}`,
+            css: `linear-gradient(135deg, hsl(${i*2}, 80%, 60%), hsl(${(i*2+60)%360}, 80%, 70%))`,
+            colors: [
+                `hsl(${i*2}, 80%, 60%)`,
+                `hsl(${(i*2+60)%360}, 80%, 70%)`
+            ]
+        });
+    }
+    gradients.push(...extraGradients);
+
+    // --- Button Styles (50 buttons) ---
+    const buttonStyles = [
+        { name: "Primary", style: "background: #3498db; color: #fff;" },
+        { name: "Success", style: "background: #2ecc71; color: #fff;" },
+        { name: "Danger", style: "background: #e74c3c; color: #fff;" },
+        { name: "Warning", style: "background: #f1c40f; color: #222;" },
+        { name: "Info", style: "background: #1abc9c; color: #fff;" },
+        { name: "Dark", style: "background: #222; color: #fff;" },
+        { name: "Light", style: "background: #f4f6fa; color: #222; border: 1px solid #ccc;" },
+        { name: "Purple", style: "background: #8e44ad; color: #fff;" },
+        { name: "Pink", style: "background: #fd79a8; color: #fff;" },
+        { name: "Indigo", style: "background: #3f51b5; color: #fff;" },
+        { name: "Teal", style: "background: #009688; color: #fff;" },
+        { name: "Amber", style: "background: #ffc107; color: #222;" },
+        { name: "Blue Gray", style: "background: #607d8b; color: #fff;" },
+        { name: "Cyan", style: "background: #00bcd4; color: #fff;" },
+        { name: "Lime", style: "background: #cddc39; color: #222;" },
+        { name: "Deep Orange", style: "background: #ff5722; color: #fff;" },
+        { name: "Brown", style: "background: #795548; color: #fff;" },
+        { name: "Gradient 1", style: "background: linear-gradient(90deg, #ff9966, #ff5e62); color: #fff;" },
+        { name: "Gradient 2", style: "background: linear-gradient(90deg, #43cea2, #185a9d); color: #fff;" },
+        { name: "Gradient 3", style: "background: linear-gradient(90deg, #f7971e, #ffd200); color: #222;" },
+        { name: "Gradient 4", style: "background: linear-gradient(90deg, #00c6fb, #005bea); color: #fff;" },
+        { name: "Gradient 5", style: "background: linear-gradient(90deg, #eecda3, #ef629f); color: #fff;" },
+        { name: "Outline Primary", style: "background: transparent; color: #3498db; border: 2px solid #3498db;" },
+        { name: "Outline Success", style: "background: transparent; color: #2ecc71; border: 2px solid #2ecc71;" },
+        { name: "Outline Danger", style: "background: transparent; color: #e74c3c; border: 2px solid #e74c3c;" },
+        { name: "Outline Warning", style: "background: transparent; color: #f1c40f; border: 2px solid #f1c40f;" },
+        { name: "Outline Info", style: "background: transparent; color: #1abc9c; border: 2px solid #1abc9c;" },
+        { name: "Outline Dark", style: "background: transparent; color: #222; border: 2px solid #222;" },
+        { name: "Outline Purple", style: "background: transparent; color: #8e44ad; border: 2px solid #8e44ad;" },
+        { name: "Outline Pink", style: "background: transparent; color: #fd79a8; border: 2px solid #fd79a8;" },
+        { name: "Outline Indigo", style: "background: transparent; color: #3f51b5; border: 2px solid #3f51b5;" },
+        { name: "Outline Teal", style: "background: transparent; color: #009688; border: 2px solid #009688;" },
+        { name: "Outline Amber", style: "background: transparent; color: #ffc107; border: 2px solid #ffc107;" },
+        { name: "Outline Blue Gray", style: "background: transparent; color: #607d8b; border: 2px solid #607d8b;" },
+        { name: "Outline Cyan", style: "background: transparent; color: #00bcd4; border: 2px solid #00bcd4;" },
+        { name: "Outline Lime", style: "background: transparent; color: #cddc39; border: 2px solid #cddc39;" },
+        { name: "Outline Deep Orange", style: "background: transparent; color: #ff5722; border: 2px solid #ff5722;" },
+        { name: "Outline Brown", style: "background: transparent; color: #795548; border: 2px solid #795548;" },
+        { name: "Glass", style: "background: rgba(255,255,255,0.2); color: #222; border: 1px solid #ccc; backdrop-filter: blur(4px);" },
+        { name: "Shadow", style: "background: #fff; color: #222; box-shadow: 0 4px 16px rgba(0,0,0,0.12);" },
+        { name: "Neon", style: "background: #0ff; color: #222; box-shadow: 0 0 8px #0ff, 0 0 16px #0ff;" },
+        { name: "Ghost", style: "background: transparent; color: #222; border: none;" },
+        { name: "Rounded", style: "background: #222; color: #fff; border-radius: 999px;" },
+        { name: "Square", style: "background: #222; color: #fff; border-radius: 0;" },
+        { name: "Pill", style: "background: #3498db; color: #fff; border-radius: 50px;" },
+        { name: "Block", style: "background: #2ecc71; color: #fff; width: 100%;" },
+        { name: "Dashed", style: "background: #fff; color: #222; border: 2px dashed #222;" },
+        { name: "Dotted", style: "background: #fff; color: #222; border: 2px dotted #222;" },
+        { name: "Link", style: "background: none; color: #3498db; border: none; text-decoration: underline;" }
+    ];
+    // Add more button styles to reach 50
+    for (let i = buttonStyles.length + 1; i <= 50; i++) {
+        buttonStyles.push({
+            name: `Button ${i}`,
+            style: `background: linear-gradient(90deg, hsl(${i*7}, 80%, 60%), hsl(${(i*7+60)%360}, 80%, 70%)); color: #fff;`
+        });
+    }
+
+    // Render Buttons
+    const buttonGrid = document.getElementById('buttonGrid');
+    buttonStyles.forEach(btn => {
+        const button = document.createElement('button');
+        button.textContent = btn.name;
+        button.setAttribute('style', `
+            ${btn.style}
+            padding: 0.6rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+            margin-bottom: 0.5rem;
+        `);
+        button.onmouseover = () => {
+            button.style.boxShadow = "0 4px 16px rgba(0,0,0,0.12)";
+        };
+        button.onmouseout = () => {
+            button.style.boxShadow = "";
+        };
+        buttonGrid.appendChild(button);
+    });
+    </script>
+    <script>
+    const gradients = [
+        {
+            name: "Sunset",
+            css: "linear-gradient(135deg, #ff7e5f, #feb47b)",
+            colors: ["#ff7e5f", "#feb47b"]
+        },
+        {
+            name: "Aqua Marine",
+            css: "linear-gradient(135deg, #43cea2, #185a9d)",
+            colors: ["#43cea2", "#185a9d"]
+        },
+        {
+            name: "Purple Bliss",
+            css: "linear-gradient(135deg, #360033, #0b8793)",
+            colors: ["#360033", "#0b8793"]
+        },
+        {
+            name: "Bloody Mary",
+            css: "linear-gradient(135deg, #ff512f, #dd2476)",
+            colors: ["#ff512f", "#dd2476"]
+        },
+        {
+            name: "Emerald Water",
+            css: "linear-gradient(135deg, #348f50, #56b4d3)",
+            colors: ["#348f50", "#56b4d3"]
+        },
+        {
+            name: "Peach",
+            css: "linear-gradient(135deg, #ed6ea0, #ec8c69)",
+            colors: ["#ed6ea0", "#ec8c69"]
+        },
+        {
+            name: "Royal Blue",
+            css: "linear-gradient(135deg, #536976, #292e49)",
+            colors: ["#536976", "#292e49"]
+        },
+        {
+            name: "Mojito",
+            css: "linear-gradient(135deg, #1d976c, #93f9b9)",
+            colors: ["#1d976c", "#93f9b9"]
+        },
+        {
+            name: "Cherry",
+            css: "linear-gradient(135deg, #eb3349, #f45c43)",
+            colors: ["#eb3349", "#f45c43"]
+        },
+        {
+            name: "Ocean Blue",
+            css: "linear-gradient(135deg, #2193b0, #6dd5ed)",
+            colors: ["#2193b0", "#6dd5ed"]
+        },
+        {
+            name: "Sunrise",
+            css: "linear-gradient(135deg, #ff512f, #f09819)",
+            colors: ["#ff512f", "#f09819"]
+        },
+        {
+            name: "Green Beach",
+            css: "linear-gradient(135deg, #02aab0, #00cdac)",
+            colors: ["#02aab0", "#00cdac"]
+        },
+        {
+            name: "Pink Dream",
+            css: "linear-gradient(135deg, #f953c6, #b91d73)",
+            colors: ["#f953c6", "#b91d73"]
+        },
+        {
+            name: "Deep Space",
+            css: "linear-gradient(135deg, #000000, #434343)",
+            colors: ["#000000", "#434343"]
+        },
+        {
+            name: "Lemon Twist",
+            css: "linear-gradient(135deg, #3ca55c, #b5ac49)",
+            colors: ["#3ca55c", "#b5ac49"]
+        },
+        {
+            name: "Frost",
+            css: "linear-gradient(135deg, #000428, #004e92)",
+            colors: ["#000428", "#004e92"]
+        },
+        {
+            name: "Firewatch",
+            css: "linear-gradient(135deg, #cb2d3e, #ef473a)",
+            colors: ["#cb2d3e", "#ef473a"]
+        },
+        {
+            name: "Blue Lagoon",
+            css: "linear-gradient(135deg, #43c6ac, #191654)",
+            colors: ["#43c6ac", "#191654"]
+        },
+        {
+            name: "Mango",
+            css: "linear-gradient(135deg, #ffe259, #ffa751)",
+            colors: ["#ffe259", "#ffa751"]
+        },
+        {
+            name: "Royal",
+            css: "linear-gradient(135deg, #141e30, #243b55)",
+            colors: ["#141e30", "#243b55"]
+        }
+    ];
+
+    const grid = document.getElementById('gradientGrid');
+    const searchInput = document.getElementById('searchInput');
+    const toggleMode = document.getElementById('toggleMode');
+    const mainContent = document.querySelector('.main-content');
+    const galleryTitle = document.getElementById('gallery-title');
+
+    function renderGradients(filter = "") {
+        grid.innerHTML = "";
+        const filtered = gradients.filter(g => {
+            const search = filter.toLowerCase();
+            return (
+                g.name.toLowerCase().includes(search) ||
+                g.colors.some(c => c.toLowerCase().includes(search)) ||
+                g.css.toLowerCase().includes(search)
+            );
+        });
+        if (filtered.length === 0) {
+            grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: #888; font-size: 1.2rem;">No gradients found.</div>`;
+            return;
+        }
+        filtered.forEach(g => {
+            const card = document.createElement('div');
+            card.style.background = g.css;
+            card.style.borderRadius = "1.25rem";
+            card.style.boxShadow = "0 4px 24px rgba(0,0,0,0.08)";
+            card.style.overflow = "hidden";
+            card.style.position = "relative";
+            card.style.transition = "transform 0.2s, box-shadow 0.2s";
+            card.style.cursor = "pointer";
+            card.style.display = "flex";
+            card.style.flexDirection = "column";
+            card.style.justifyContent = "flex-end";
+            card.style.minHeight = "220px";
+            card.style.padding = "0";
+            card.tabIndex = 0;
+
+            card.onmouseover = card.onfocus = () => {
+                card.style.transform = "translateY(-6px) scale(1.03)";
+                card.style.boxShadow = "0 8px 32px rgba(0,0,0,0.16)";
+            };
+            card.onmouseout = card.onblur = () => {
+                card.style.transform = "";
+                card.style.boxShadow = "0 4px 24px rgba(0,0,0,0.08)";
+            };
+
+            const info = document.createElement('div');
+            info.style.background = "rgba(255,255,255,0.85)";
+            info.style.backdropFilter = "blur(2px)";
+            info.style.padding = "1rem";
+            info.style.borderTopLeftRadius = "1.25rem";
+            info.style.borderTopRightRadius = "1.25rem";
+            info.style.marginTop = "auto";
+            info.style.display = "flex";
+            info.style.flexDirection = "column";
+            info.style.gap = "0.5rem";
+
+            const name = document.createElement('div');
+            name.textContent = g.name;
+            name.style.fontWeight = "700";
+            name.style.fontSize = "1.1rem";
+            name.style.color = "#222";
+
+            const code = document.createElement('code');
+            code.textContent = g.css;
+            code.style.fontSize = "0.95rem";
+            code.style.color = "#555";
+            code.style.background = "#f4f6fa";
+            code.style.padding = "0.2rem 0.5rem";
+            code.style.borderRadius = "0.5rem";
+            code.style.wordBreak = "break-all";
+            code.style.marginTop = "0.25rem";
+
+            info.appendChild(name);
+            info.appendChild(code);
+            card.appendChild(info);
+
+            grid.appendChild(card);
+        });
+    }
+
+    searchInput.addEventListener('input', e => {
+        renderGradients(e.target.value);
+    });
+
+    let darkMode = false;
+    toggleMode.addEventListener('click', () => {
+        darkMode = !darkMode;
+        if (darkMode) {
+            document.body.style.background = "#181c23";
+            mainContent.style.background = "#181c23";
+            galleryTitle.style.color = "#fff";
+            searchInput.style.background = "#23272f";
+            searchInput.style.color = "#fff";
+            searchInput.style.border = "1px solid #444";
+            toggleMode.style.background = "#fff";
+            toggleMode.style.color = "#222";
+            toggleMode.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            document.querySelectorAll('#gradientGrid code').forEach(code => {
+                code.style.background = "#23272f";
+                code.style.color = "#eee";
+            });
+            document.querySelectorAll('#gradientGrid div[style*="background: rgba(255,255,255"]').forEach(info => {
+                info.style.background = "rgba(24,28,35,0.92)";
+            });
+        } else {
+            document.body.style.background = "#fff";
+            mainContent.style.background = "#f4f6fa";
+            galleryTitle.style.color = "#222";
+            searchInput.style.background = "#fff";
+            searchInput.style.color = "#222";
+            searchInput.style.border = "1px solid #ccc";
+            toggleMode.style.background = "#222";
+            toggleMode.style.color = "#fff";
+            toggleMode.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            document.querySelectorAll('#gradientGrid code').forEach(code => {
+                code.style.background = "#f4f6fa";
+                code.style.color = "#555";
+            });
+            document.querySelectorAll('#gradientGrid div[style*="background: rgba(24,28,35"]').forEach(info => {
+                info.style.background = "rgba(255,255,255,0.85)";
+            });
+        }
+    });
+
+    renderGradients();
+    </script>
+</body>
+</html></main>

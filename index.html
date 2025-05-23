@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <link rel="stylesheet" href="styles.css">
+   <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+ 
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+   height: 85px;
+   
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+   width: 300px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+ text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    font-style: bold;
+    font-weight: 600;
+
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+.nav-link:active {
+    color: #2980b9;
+}
+
+
+
+.container2 {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+    height: 80vh;
+    
+  
+background: linear-gradient(to right, #d3dbff, #ffccdd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+}
+
+.container3 {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+    height: 80vh;
+    
+  
+background: linear-gradient(to right, #2b3357, #def892); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.container4 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+    height: 80vh;}
+.all {
+    width: 30%;
+    padding: 30px;
+    height: 220px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+
+.abc {
+    width: 100%;
+   
+    margin: 0 auto;
+    text-align: center;
+   
+   height: 75vh;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-top: -250px;
+    
+  
+background: linear-gradient(to right, #d3dbff, #ffccdd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.yt {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 25px;
+    text-align: center;
+ }
+ iframe {
+    width: 300px;
+    height: 200px;
+            border-radius: 20px;
+
+
+    }
+   
+.container44 {
+    display: flex;  
+    background-color: black;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 150px;
+    height: 80vh;}
+.alll {
+    width: 25%;
+    padding: 30px;
+    height: 220px;
+    margin-top: 20px;
+    background-color: #ffffff00;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0);
+    transition: transform 0.3s ease;
+    place-items: bottom;
+  
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #9e9e9e;
+    margin: 20px 0;
+}
+ .location-icon {
+            font-size: 24px;
+            color: #e74c3c;
+            margin-top: 3px;
+        }
+        
+        .address-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+ .address-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 400px;
+            margin: 20px;
+        }
+</style>
+
+
+
+
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <img src="assets/PH-Logo-Dark-BdyTP5j6.png" class="logo">
+            
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">হোম</a></li>
+                    <li class="nav-item"><a href="class.html" class="nav-link">বুটক্যাম্প ক্লাস</a></li>
+                    <li class="nav-item"><a href="course.html" class="nav-link">মেইন কোর্স</a></li>
+                    <li class="nav-item"><a href="blog-ph.html" class="nav-link">ব্লগ</a></li>
+                    <li class="nav-item"><a href="ph-book.html" class="nav-link">Ph Books</a></li> <li class="nav-item"><a href="tour-mami.html" class="nav-link">Tour</a></li>
+                </ul>
+              
+            </nav>
+        </div>
+    </header>
+    
+ 
+    
+  
+
+
+
+    <main>
+        <div class="container2">
+            <h1> <div style="  background: linear-gradient(to right, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font: bolder;
+"> ওয়েব ডেভেলপমেন্ট শুরু করুন </div></h1> <h1>১৪ দিনের ফ্রি বুটক্যাম্পে 🚀</h1><br>
+            <p>প্রোগ্রামিং ওয়েব ডেভেলপমেন্ট বুটক্যাম্পর ১২ তম ব্যাচের ইনরোলমেন্ট শুরু ১০ই জুন থেকে <br>এবং ইনরোলমেন্ট শেষ ২৪ ই জুন রাত ১১ টা ৫৯ মিনিটে</p><br>
+           <a href="https://parvejahmed.top/" target="_blank">
+            <button style="padding: 12px; border-radius:60px; color:#ffffff;background: linear-gradient(to right, #ff9a5b, #ff508b); border: 0px;"> এখনই জয়েন করো </button>
+
+</a>
+  
+
+
+
+</div>
+
+<div class="container3">
+
+ <img style="border-color: white;border-radius: 20px;background-color: white;margin-top: -320px;" src="assets/thumbnail-D6kBuBbt.webp" width="800px" alt="photo">  <br>
+
+ <div>
+
+
+ <div class="container4">
+
+<div class="all">
+
+ <img src="assets/icons8-internet-50.png" width="50px" height="50px" alt="icons">
+ <h2>4700+</h2>
+ <h4>জব প্লেসমেন্ট বিশ্বব্যাপি</h4>
+
+</div>
+<div class="all">
+
+ <img src="assets/icons8-docs-100.png" width="50px" height="50px" alt="icons">
+ <h2>2200+</h2>
+ <h4>পার্টনার কোম্পানি</h4>
+
+</div>
+<div class="all">
+
+ <img src="assets/icons8-management-50.png" width="50px" height="50px" alt="icons">
+ <h2>87+</h2>
+ <h4>ডেডিকেটেড সাপোর্ট মেম্বার</h4>
+
+</div>
+
+
+
+
+
+</div>
+  
+
+
+
+
+<div class="abc">
+           
+  <div><h2 style="font: bolder;font-size: 25px;">স্টুডেন্টদের ড্রিম জব জয় করার জার্নি</h2></div>
+  <div class="yt">
+<div class="allyt">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ID8g1_bTTgc?si=lgdOFt0sHgLaxZSh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+</div>
+
+
+<div class="allyt">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SL0az0RBXCA?si=27iYmMgDiKO-CzDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+</div>
+<div class="allyt">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SH8VxZcY04g?si=UDOCSjP98Q8N_Vnq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+</div>
+<div class="allyt">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-pUYbz0v70c?si=SFzbUFOYoPYaFR2D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</div>
+
+
+
+  </div>
+
+</div>
+
+
+</div>
+
+<div style="margin-top: -170px;">
+
+    <a href="https://parvejahmed.top/blog" target="_blank">
+
+
+    <button style="padding: 12px;margin-top: -100px; border-radius:60px; color:#ffffff;background: linear-gradient(to right, #ff9a5b, #ff508b); border: 0px;"> আরো সাকসেস দেখুন </button>
+    </a>
+</div>
+
+<div>
+
+<div>
+ <div class="container44">
+
+<div class="alll">
+
+
+
+ <img src="assets/PH-Logo-White-C7jJJn6C.png" width="250px" height="50px" alt="icons">
+
+
+  <div class="address-container">
+   <div class="location-icon">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+       
+           <div class="address-text">আওয়াল সেন্টার,বনানী,ঢাকা</div><br>
+            
+        
+   </div>
+
+
+  <div class="address-container">
+   <div class="location-icon">
+            <i class="fas fa-envelope"></i>
+        </div>
+       
+           <div class="address-text">web@programming-hero.com</div><br>
+            
+        
+   </div>
+<div><h4 style="color: aliceblue;">যোগাযোগ বিস্তারিত জানতে কল করুন</h4></div>
+<div class="address-container">
+   <div class="location-icon">
+             <i class="fas fa-phone-alt"></i>
+        </div>
+       
+           <div class="address-text">01322-901105, 01322-810874</div><br>
+            
+        
+   </div>
+
+</div>
+<div class="alll">
+
+<div class="hide">
+<div>
+    <a style="text-decoration: none;padding-top: 200px;font-size: 35px; color: #d3dbff ;padding-top: 15px;" href="#">আমাদের সম্পর্কে</a>
+</div>
+
+<div>
+    <a style="text-decoration: none;font-size: 30px;padding-top: 15px" href="#">আমাদের কোর্স</a>
+</div>
+
+<div>
+    <a style="text-decoration: none;font-size: 30px;padding-top: 15px" href="#">লিঙ্কসমূহ</a>
+</div>
+
+<div>
+    <a style="text-decoration: none;font-size: 30px;padding-top: 15px" href="https://parvejahmed.top">ব্লগ পড়ুন</a>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="alll">
+
+ <h4 style="color: #ffffff;font-size: 30px;">আমাদের অ্যাপ</h4>
+
+<div style="margin-top: 20px;">
+ <img src="assets/playswnload.webp" width="250px" height="60px" alt="icons"><br>
+ 
+<img src="assets/playwss.webp" width="250px" height="60px" alt="icons"><br>
+
+<img src="assets/playws.webp" width="250px" height="60px" alt="icons">
+</div>
+
+
+</div>
+
+
+
+
+</div>
+  <hr style="color: #d3dbff;margin-top: -252px ;"> <div style="margin-top: 40px;">
+
+  <div style="color: #82b6ff;font-size: 20px;"> © 2025 Programming <br> All rights reserved..Developed by 
+    
+    
+    <a style="text-decoration: none;"  href="https://parvejahmed.top" target="blunk" > Parvej Ahmed</a>
+    
+   </div>
+
+
+</div>
+
+
+
+
+
+    </main>
+</body>
+</html>
